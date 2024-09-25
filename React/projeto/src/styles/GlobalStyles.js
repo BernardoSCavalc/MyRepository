@@ -1,12 +1,11 @@
 import { createGlobalStyle } from 'styled-components';
 
-const GlobalStyle = createGlobalStyle`
+const GlobalStyles = createGlobalStyle`
     body {
-        margin-top: -15px;
+        margin-top: 0;
         padding: 0;
         box-sizing: border-box;
     }
-
 `
 
-export default GlobalStyle
+export default GlobalStyles

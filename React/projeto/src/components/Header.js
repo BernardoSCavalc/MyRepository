@@ -1,4 +1,5 @@
 import styled from "styled-components"
+import NavBar from "./NavBar"
 
 const HeaderContainer = styled.header`
     background-color: yellow;
@@ -10,6 +11,7 @@ function Header() {
         <div>
             <HeaderContainer>
                 <h1>Header</h1>
+                <NavBar/>
             </HeaderContainer>
         </div>
     )

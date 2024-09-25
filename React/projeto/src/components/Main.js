@@ -1,10 +1,12 @@
 import styled from "styled-components"
+import About from "./About"
+import Services from "./Services"
+import TypesEnergy from "./TypesEnergy"
+import Ongs from "./Ongs"
+
 
 const MainContainer = styled.main`
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    height: 100vh;
+    height: 100vh;  
 `
 
 
@@ -12,7 +14,10 @@ function Main() {
     return (
         <main>
             <MainContainer>
-                <h1>Main Content</h1>
+                <About/>
+                <Services/>
+                <TypesEnergy/>
+                <Ongs/>
             </MainContainer>
         </main>
         
