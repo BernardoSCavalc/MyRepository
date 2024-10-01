@@ -2,18 +2,18 @@ import styled from "styled-components"
 import NavBar from "./NavBar"
 
 const HeaderContainer = styled.header`
-    background-color: yellow;
-    padding: 1px 20px;
+    background-color: #333;
+    width: 100%;
+    box-sizing: border-box;
 `
 
 function Header() {
     return (
-        <div>
+        <>
             <HeaderContainer>
-                <h1>Header</h1>
                 <NavBar/>
             </HeaderContainer>
-        </div>
+        </>
     )
 }
 
