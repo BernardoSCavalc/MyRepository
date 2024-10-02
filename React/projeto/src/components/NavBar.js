@@ -1,76 +1,150 @@
-import styled from "styled-components";
-import { Link } from "react-router-dom";
+import React, { useState } from 'react';
+import styled from 'styled-components';
 
-const NavBarContainer = styled.nav`
+const NavbarContainer = styled.div`
     width: 100%;
-    border: solid 2px green;
+    height: 60px;
+    max-width: 1200px;
+    margin: 0 auto;
     display: flex;
     align-items: center;
     justify-content: space-between;
 `;
 
-const Logo = styled.h1`
+const Logo = styled.div`
+    font-size: 2rem;
+    font-weight: bold;
     color: #fff;
-    font-size: 1.5rem;
-    padding-left: 10rem;
-    box-sizing: border-box;
-`
-
-const Menu = styled(Link)`
-    margin: 0 1rem;
-    border: solid 2px red;
+    list-style: none;
     cursor: pointer;
-    color: #fff;
-    text-decoration: none;
-    align-items: center;
-    
-    &:hover {
-        text-decoration: underline;
+`;
+
+const Links = styled.ul`
+    display: flex;
+    gap: 3.5rem;
+    list-style: none;
+
+    a {
+        text-decoration: none;
+        color: #fff;
+        font-size: 1.35rem;
+        position: relative;
+        padding-bottom: 5px;
+    }
+
+    a::after {
+        content: '';
+        position: absolute;
+        width: 0;
+        height: 2px;
+        background-color: #fff;
+        left: 0;
+        bottom: 0;
+        transition: width 0.3s ease-in-out;
+    }
+
+    a:hover::after {
+        width: 100%;
     }
 `;
 
-const MenuContainer = styled.div`
-    border: solid 2px blue;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 1.25rem;
-`
-
-const Button = styled(Link)`
+const ActionButton = styled.a`
     background-color: #000;
-    padding: 0.5rem 1rem;
     color: #fff;
+    padding: 0.5rem 1rem;
     border-radius: 20px;
-    margin-right: 10rem;
+    font-size: 1.1rem;
     font-weight: bold;
+    cursor: pointer;
     text-decoration: none;
-    font-size: 0.8rem;
 
     &:hover {
         scale: 1.05;
         color: #f6e24b;
     }
+
+    &:active {
+        scale: 0.95;
+    }
 `;
 
+// const ToggleButton = styled.div`
+//   color: #fff;
+//   font-size: 1.5rem;
+//   cursor: pointer;
+
+//   @media (max-width: 992px) {
+//     display: block;
+//   }
+// `;
+
+// const DropdownMenu = styled.div`
+//   display: none;
+//   position: absolute;
+//   right: 2rem;
+//   top: 60px;
+//   background: rgba(255, 255, 255, 0.1);
+//   backdrop-filter: blur(15px);
+//   border-radius: 10px;
+//   overflow: hidden;
+//   height: 0;
+//   width: 300px;
+//   transition: height 0.1s ease-in-out;
+
+//   &.open {
+//     display: block;
+//     height: 240px;
+//   }
+
+//   li {
+//     font-size: 1.1rem;
+//     padding: 0.7rem;
+//     display: flex;
+//     align-items: center;
+//     justify-content: center;
+//   }
+// `;
 
 function NavBar() {
+    // const [isOpen, setIsOpen] = useState(false);
+
+    // const toggleMenu = () => {
+    //     setIsOpen(!isOpen);
+    // };
+
     return (
-        <NavBarContainer>
-            <Logo>SparkEnergy</Logo>
-            <MenuContainer>
-                <Menu to="/">Início</Menu>
-                <Menu to="/noticias">Notícias</Menu>
-                <Menu to="/sobre">Sobre</Menu>
-                <Menu to="/doe">Doe</Menu>
-            </MenuContainer>
-                <Button to="/form">Comece Agora</Button>
-        </NavBarContainer>
-    );
+    <NavbarContainer>
+        <Logo>
+            <a>SparkEnergy</a>
+        </Logo>
+        <Links>
+            <li><a>Início</a></li>
+            <li><a href="#">Notícias</a></li>
+            <li><a href="#">Sobre</a></li>
+            <li><a href="#">Doe</a></li>
+        </Links>
+        <ActionButton href="#">Comece Agora</ActionButton>
+        {/* <ToggleButton onClick={toggleMenu}>
+            <i className={`fa-solid ${isOpen ? 'fa-xmark' : 'fa-bars'}`}></i>
+        </ToggleButton>
+        <DropdownMenu className={isOpen ? 'open' : ''}>
+            <ul>
+                <li><a href="#">Início</a></li>
+                <li><a href="#">Notícias</a></li>
+                <li><a href="#">Sobre</a></li>
+                <li><a href="#">Doe</a></li>
+            </ul>
+            <ActionButton href="#">Comece Agora</ActionButton>
+        </DropdownMenu> */}
+    </NavbarContainer>
+  );
 }
 
 export default NavBar;
 
+
+
+// ======================= Last Code ====================================
 
 // import styled from "styled-components"
 // import { Link } from "react-router-dom"

@@ -3,7 +3,7 @@ import Header from "./Header"
 function Contacts() {
     return(
         <>
-           <Header/>
+            <Header/>
             <h1>Contact Page</h1>     
         </>
     )

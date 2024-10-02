@@ -9,7 +9,6 @@ const MainContainer = styled.main`
     height: 100vh;  
 `
 
-
 function Main() {
     return (
         <main>
