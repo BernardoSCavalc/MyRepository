@@ -1,21 +1,22 @@
 import React, { useEffect } from 'react';
 import styled from 'styled-components';
+import HeaderBg from "../assets/images/header_imgs/lampada_bg.jpg";
 
 const HomeSection = styled.section`
-    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('../assets/images/Pic1.jpg');
-    background-size: cover;
-    background-position: center;
-    height: calc(100vh - 60px);
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    color: #fff;
+  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(${HeaderBg});
+  background-size: cover;
+  background-position: center;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: #fff;
 `;
 
 const DynamicTitle = styled.h1`
-    font-size: 2.25rem;
+    font-size: 3rem;
     color: #f6e24b;
     letter-spacing: 2px solid #b30000;
     padding-left: 5%;
@@ -35,7 +36,9 @@ const DynamicTitle = styled.h1`
 `;
 
 const SubHeading = styled.h2`
-    margin: 0.1rem;
+  font-size: 1.25rem;
+  font-weight: normal;
+  margin: 0.1rem;
 `;
 
 const texts = ["Impacto", "Consciência", "Sustentabilidade"];

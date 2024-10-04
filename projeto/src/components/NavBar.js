@@ -12,25 +12,25 @@ const NavbarContainer = styled.div`
     justify-content: space-between;
 `;
 
-const Logo = styled.div`
-    font-size: 2rem;
+const Logo = styled(Link)`
+    margin: 0;
+    font-size: 1.75rem;
     font-weight: bold;
     color: #fff;
-    list-style: none;
     cursor: pointer;
+    text-decoration: none;
 `;
 
 const Links = styled.ul`
     display: flex;
-    gap: 3.5rem;
+    gap: 1.5rem;
     list-style: none;
 
     a {
         text-decoration: none;
         color: #fff;
-        font-size: 1.35rem;
+        font-size: 1.25rem;
         position: relative;
-        padding-bottom: 5px;
     }
 
     a::after {
@@ -49,9 +49,9 @@ const Links = styled.ul`
     }
 `;
 
-const ActionButton = styled.a`
-    background-color: #000;
-    color: #fff;
+const ActionButton = styled(Link)`
+    background-color: #f6e24b;
+    color: #000;
     padding: 0.5rem 1rem;
     border-radius: 20px;
     font-size: 1.1rem;
@@ -61,9 +61,7 @@ const ActionButton = styled.a`
 
     &:hover {
         scale: 1.05;
-        color: #f6e24b;
     }
-
     &:active {
         scale: 0.95;
     }
@@ -106,6 +104,13 @@ const DropdownMenu = styled.div`
   }
 `;
 
+const Nav = styled(Link)`
+    margin: 0 1em;
+    cursor: pointer;
+    color: black;
+    text-decoration: none;
+`
+
 function NavBar() {
     const [isOpen, setIsOpen] = useState(false);
 
@@ -113,69 +118,45 @@ function NavBar() {
         setIsOpen(!isOpen);
     };
 
+    const scrollToSection = (event, id) => {
+    event.preventDefault();
+    const section = document.getElementById(id);
+    section?.scrollIntoView({ behavior: "smooth" });
+    };
+
     return (
-    <NavbarContainer>
-        <Logo>
-            <a>SparkEnergy</a>
-        </Logo>
+      <NavbarContainer>
+        <Logo to="/">SparkEnergy</Logo>
         <nav>
-        <Links>
-            <li><a>Início</a></li>
+          <Links>
+            <Nav to="/">Home</Nav>
+            <Nav to="/" onClick={(e) => scrollToSection(e, "about")}>
+              About
+            </Nav>
+            <Nav to="#services" onClick={(e) => scrollToSection(e, "services")}>
+              Services
+            </Nav>
+            <Nav to="/Contacts">Contacts</Nav>
+          </Links>
+        </nav>
+        
+        <ActionButton to="/Form">SparkConnect</ActionButton>
+        <ToggleButton onClick={toggleMenu}>
+          <i className={`fa-solid ${isOpen ? "fa-xmark" : "fa-bars"}`}></i>
+        </ToggleButton>
+        
+        <DropdownMenu className={isOpen ? "open" : ""}>
+          <ul>
+            <li><a href="#">Início</a></li>
             <li><a href="#">Notícias</a></li>
             <li><a href="#">Sobre</a></li>
             <li><a href="#">Doe</a></li>
-        </Links>
-        </nav>
-        <ActionButton href="#">Comece Agora</ActionButton>
-        <ToggleButton onClick={toggleMenu}>
-            <i className={`fa-solid ${isOpen ? 'fa-xmark' : 'fa-bars'}`}></i>
-        </ToggleButton>
-        <DropdownMenu className={isOpen ? 'open' : ''}>
-            <ul>
-                <li><a href="#">Início</a></li>
-                <li><a href="#">Notícias</a></li>
-                <li><a href="#">Sobre</a></li>
-                <li><a href="#">Doe</a></li>
-            </ul>
-            <ActionButton href="#">Comece Agora</ActionButton>
+          </ul>
+          <ActionButton>SparkConnect</ActionButton>
         </DropdownMenu>
-    </NavbarContainer>
-  );
+      </NavbarContainer>
+    );
 }
 
 export default NavBar
-
-// ======================= Last Code ====================================
-
-// import styled from "styled-components"
-// import { Link } from "react-router-dom"
-// import Button from "./ButtonHeader"
-
-// const NavBarContainer = styled.nav`
-//     border: 2px solid green;
-
-// `
-// const Nav = styled(Link)`
-//     margin: 0 1em;
-//     cursor: pointer;
-//     color: black;
-//     text-decoration: none;
-//     &:hover {
-//         text-decoration: underline;
-//         color: black;
-//     }
-// `
-
-// function NavBar() {
-
-//     return(
-//         <NavBarContainer>
-//             <Nav to="/">Inicio</Nav>
-//             <Nav to="/About">Sobre nós</Nav>
-//             <Nav to="/Services">Services</Nav>
-//             <Nav to="/Contacts">Contact</Nav>
-//             <Button />
-//         </NavBarContainer>
-//     )
-// }
 

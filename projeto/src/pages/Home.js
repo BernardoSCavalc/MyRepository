@@ -12,10 +12,10 @@ const HomeContainer = styled.body`
 function Home(){
     return (
     <HomeContainer>
-        <Header/> 
-        <Section/>
-        <Main/>
-        <Footer/>
+        <Header /> 
+        <Section />
+        <Main />
+        <Footer />
     </HomeContainer>  
     )
 }

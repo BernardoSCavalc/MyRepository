@@ -1,12 +1,19 @@
 import Header from "../components/Header"
+import styled from "styled-components";
+
+const ContactContainer = styled.div`
+    margin-top: 20px;
+`
 
 function Contacts() {
-    return(
-        <>
-            <Header/>
-            <h1>Contact Page</h1>     
-        </>
-    )
+    return (
+      <>
+        <Header />
+        <ContactContainer>
+          <h1>Contact Page</h1>
+        </ContactContainer>
+      </>
+    );
 }
 
 export default Contacts

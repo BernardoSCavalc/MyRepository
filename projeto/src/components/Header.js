@@ -7,8 +7,9 @@ const HeaderContainer = styled.header`
   top: 0;
   left: 0;
   width: 100%;
-  padding: 0 2rem;
+  padding: 0 2px;
   z-index: 2;
+  background-color: transparent;
 `;
 
 function Header() {

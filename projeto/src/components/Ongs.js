@@ -8,7 +8,7 @@ const OngsContainer = styled.section`
 function Ongs() {
 
     return (
-        <OngsContainer>
+        <OngsContainer id="">
             <h1>Ongs - Part</h1>
         </OngsContainer>
     )
