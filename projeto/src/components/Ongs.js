@@ -2,7 +2,7 @@ import styled from "styled-components"
 
 const OngsContainer = styled.section`
     border: 5px solid red;
-    
+    height: 50vh;    
 `
 
 function Ongs() {

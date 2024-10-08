@@ -19,7 +19,6 @@ const DynamicTitle = styled.h1`
     font-size: 3rem;
     color: #f6e24b;
     letter-spacing: 2px solid #b30000;
-    padding-left: 5%;
     font-weight: bold;
     display: inline-block;
     border-right: 3px solid;
@@ -27,6 +26,7 @@ const DynamicTitle = styled.h1`
     height: 1.19em;
     overflow: hidden;
     margin-bottom: 0.25rem;
+    align-items: center;
 
     @keyframes blinkCursor {
         50% {

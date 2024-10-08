@@ -7,6 +7,8 @@ import Section from "../components/Section"
 const HomeContainer = styled.body`
     margin: 0;
     padding: 0;
+    display: flex;
+    flex-direction: column;
 `
 
 function Home(){

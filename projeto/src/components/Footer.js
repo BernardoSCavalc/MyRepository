@@ -2,8 +2,7 @@ import styled from "styled-components"
 
 
 const FooterContainer = styled.footer`
-    background-color: yellow;
-    padding: 10px 20px;
+    border: 5px solid yellow;
 `
 
 
