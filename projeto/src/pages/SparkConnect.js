@@ -7,10 +7,14 @@ const PageContainer = styled.div`
   flex-direction: column;
 `;
 
+const StyledHeader = styled(Header)`
+  background-color: yellow;
+`;
+
 function SparkConnect() {
   return (
     <PageContainer>
-      <Header />
+      <StyledHeader />
       <Form />
     </PageContainer>
   );

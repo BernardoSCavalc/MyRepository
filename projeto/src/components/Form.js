@@ -19,7 +19,7 @@ const Introduction = styled.div`
   border: 5px solid blue;
   display: flex;
   flex-direction: column;
-  gap: 250px;
+  gap: 300px;
 `;
 
 const Title = styled.h1`
