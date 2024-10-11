@@ -1,14 +1,10 @@
-import React from 'react';
-import NavBar from './NavBar';
-import styled from 'styled-components';
+import React from "react";
+import NavBar from "./NavBar";
+import styled from "styled-components";
 
 const HeaderContainer = styled.header`
-  position: absolute;
-  top: 0;
-  left: 0;
   width: 100%;
-  padding: 0 2px;
-  z-index: 2;
+  padding: 5px;
   background-color: transparent;
 `;
 
