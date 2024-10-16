@@ -1,0 +1,81 @@
+
+.ONG{
+  background-size: cover;
+  background-position: center;
+  font-family: Arial, Helvetica, sans-serif;
+  border-radius: 20px;
+  border-color: yellow;
+  border-style:solid;
+  margin: 20px;
+  box-shadow: 0 5px 10px yellow;
+  padding: 20px;
+  text-shadow: 2px 2px 5px black;
+  
+
+  width: 40%;
+  height: 100%;
+
+}
+
+.boxA, .boxB{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center ;
+  
+  width: 100%;
+}
+
+button{
+  background-color: rgb(99, 99, 184);
+  color: white;
+}
+
+.Next, .Back{
+  background-color: rgba(139, 139, 233,0);
+  color: white;
+  
+  background-repeat: no-repeat;
+  background-position: center;
+  background-image: url('./Seta.png');
+  
+  border-style: none;
+  background-size: 100%;
+
+  margin: auto;
+
+  height: 60px;
+  width: 60px;
+  
+}
+
+.Back{
+  grid-area: back;
+  transform:rotateZ(180deg)
+}
+
+.Next{
+  grid-area: next;
+}
+
+button:hover{
+  cursor: pointer;
+}
+
+@media screen and (max-width: 1124px) {
+  .boxA{
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+  }
+
+  .boxB{
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+  }
+
+  .ONG{
+      min-width: 100%;
+  }
+}
