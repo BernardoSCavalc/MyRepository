@@ -2,19 +2,17 @@ import styled from 'styled-components'
 
 import { useRef, useEffect} from 'react';
 
-
-import '../styles/layoutOngStyled.css'
-
 const BOX1 = styled.div`
-    background-image: url("http://www.gamba.org.br/wp-content/uploads/2011/12/DSCN2712.jpg");
+    background-image: url("/ONGs_image/Gamba.jpg");
     background-size: cover;
     background-position: center;
+    position: center;
     font-family: Arial, Helvetica, sans-serif;
     border-radius: 20px;
     border-color: yellow;
     border-style:solid;
     margin: 20px;
-    box-shadow: 0 5px 10px yellow;
+
     padding: 20px;
     text-shadow: 2px 2px 5px black;
     
@@ -28,7 +26,7 @@ const BOX1 = styled.div`
 `
 
 const BOX2 = styled.div`
-    background-image: url("https://www.greenpeace.org/static/planet4-brasil-stateless/2023/01/741e59c0-01-1024x683.jpg");
+    background-image: url("/ONGs_image/Greenpeace.jpg");
     background-size: cover;
     background-position: center;
     font-family: Arial, Helvetica, sans-serif;
@@ -36,7 +34,7 @@ const BOX2 = styled.div`
     border-color: yellow;
     border-style:solid;
     margin: 20px;
-    box-shadow: 0 5px 10px yellow;
+
     padding: 20px;
     text-shadow: 2px 2px 5px black;
     
@@ -50,7 +48,7 @@ const BOX2 = styled.div`
 `
 
 const BOX3 = styled.div`
-    background-image: url("https://www.dompixote.org/wp-content/uploads/2018/05/img2-300x300.gif");
+    background-image: url("/ONGs_image/DomPixote.jpg");
     background-size: cover;
     background-position: center;
     font-family: Arial, Helvetica, sans-serif;
@@ -72,7 +70,7 @@ const BOX3 = styled.div`
 `
 
 const BOX4 = styled.div`
-    background-image: url("https://www.ecologica.org.br/wp-content/gallery/bioernergia/Bioenergia-3.jpg");
+    background-image: url("/ONGs_image/Ecologica.jpg");
     background-size: cover;
     background-position: center;
     font-family: Arial, Helvetica, sans-serif;
@@ -80,7 +78,7 @@ const BOX4 = styled.div`
     border-color: yellow;
     border-style:solid;
     margin: 20px;
-    box-shadow: 0 5px 10px yellow;
+
     padding: 20px;
     text-shadow: 2px 2px 5px black;
     
@@ -100,6 +98,12 @@ const BOXA = styled.div`
     justify-content: center;
   
     width: 100%;
+
+    @media screen and (max-width: 1124px) {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
 `
 
 const BOXB = styled.div`
@@ -109,6 +113,12 @@ const BOXB = styled.div`
     justify-content: center;
   
     width: 100%;
+
+    @media screen and (max-width: 1124px) {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
 `
 
 const ONG = styled.div`
@@ -129,6 +139,10 @@ const ONG = styled.div`
 
     text-align: justify;
     transition: background-image 2s;
+
+    @media screen and (max-width: 1124px) {
+        min-width: 100%;
+    }
 `
 
 const Button = styled.button`
@@ -139,14 +153,14 @@ const Button = styled.button`
         cursor: pointer
     }
 `
-const ArrowButton = styled.button`
+const Next = styled.button`
 
     background-color: rgba(139, 139, 233,0);
     color: white;
 
     background-repeat: no-repeat;
     background-position: center;
-    background-image: url('./Seta.png');
+    background-image: url('/Seta.png');
 
     border-style: none;
     background-size: 100%;
@@ -162,6 +176,28 @@ const ArrowButton = styled.button`
 
 `
 
+
+const Back = styled.button`
+    background-color: rgba(139, 139, 233,0);
+    color: white;
+
+    background-repeat: no-repeat;
+    background-position: center;
+    background-image: url('/Seta.png');
+
+    border-style: none;
+    background-size: 100%;
+
+    margin: auto;
+    transform:rotateZ(180deg);
+
+    height: 60px;
+    width: 60px;
+
+    &:hover{
+        cursor: pointer;
+    }
+`
 
 
 function LayoutONG(){
@@ -361,10 +397,10 @@ function LayoutONG(){
 
     return(
         <div className="layout-ONGs">
-                <h1 style={{fontFamily: "Arial, Helvetica, sans-serif", textAlign: "center", color: "yellow", textShadow: "2px 2px 5px yellow"}}>ONGs dedicadas às Energias Renováveis</h1>
+                <h1 style={{fontFamily: "Arial, Helvetica, sans-serif", textAlign: "center", color: "yellow"}}>ONGs dedicadas às Energias Renováveis</h1>
                 <div className="layout-ONGs-AUX" style={{display:"flex", flexDirection: "row", justifyContent: "space-between", alignItems: "center",}}>
                     <div> 
-                        <ArrowButton className="Back" ref={refBack} onClick={BackVoltar}></ArrowButton>
+                        <Back className="Back" ref={refBack} onClick={BackVoltar}></Back>
                     </div>
                     <div style={{display:"flex", flexDirection:"column",}}>
                         <BOXA className="boxA">
@@ -396,7 +432,7 @@ function LayoutONG(){
                         </BOXB>
                     </div>
                     <div>
-                        <ArrowButton className="Next" ref={refNext} onClick={NextAvancar}></ArrowButton>
+                        <Next className="Next" ref={refNext} onClick={NextAvancar}></Next>
                     </div>
                 </div>
             </div>      
